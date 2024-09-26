@@ -3,9 +3,11 @@ import numpy as np
 import pandas as pd
 import pickle
 import streamlit as st
+import os
 
 # Load the trained model
-with open('Best_Random_Forest_Model.pkl', 'rb') as f:
+model_path = os.path.join(os.path.dirname(__file__), 'Best_Random_Forest_Model.pkl')
+with open(model_path, 'rb') as f:
     model = pickle.load(f)
 
 # Function to take user input
